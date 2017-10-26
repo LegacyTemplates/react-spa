@@ -3,6 +3,7 @@
 let ENV = process.env.npm_lifecycle_event; // npm script
 let isProd = ENV === 'build-prod';
 let isDev = !isProd;
+let isDevServer = ENV === 'dev';
 
 var packageConfig = require("./package.json"),
     path = require('path'),
@@ -118,7 +119,9 @@ module.exports = {
                 'NODE_ENV': JSON.stringify(isProd ? 'production' : 'development')
             }
         }),
-        new Clean([root('wwwroot/dist')]),
+        ...when(!isDevServer, [
+            new Clean([root('wwwroot/dist')])
+        ]),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
             filename: isProd ? 'vendor.[chunkhash].bundle.js' : 'vendor.bundle.js'
