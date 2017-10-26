@@ -10,13 +10,8 @@
         'update-dtos': 'npm run typescript-ref'
     };
 
-    var fs = require('fs');
-    var path = require('path');
     var gulp = require('gulp');
-    var gulpUtil = require('gulp-util');
     var exec = require('child_process').exec;
-    var runSequence = require('run-sequence');
-    var nugetRestore = require('gulp-nuget-restore');
 
     function runScript(script, done) {
         process.env.FORCE_COLOR = 1;
