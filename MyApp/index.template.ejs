@@ -10,5 +10,12 @@
 
     <div id="app"></div>
 
+    <div id="footer" style="text-align:center; position:absolute; bottom:50px; width:100%;">
+        <h4>
+            <img src="<%=require('./src/assets/img/logo.png')%>" />
+            <a href="https://servicestack.net/vs-templates/ReactApp">Learn about this React VS.NET template</a>
+        </h4>
+        <div>Copyright &copy; {{ now | dateFormat('yyyy') }}</div>
+    </div>
 </body>
 </html>

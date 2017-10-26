@@ -34,6 +34,8 @@ namespace MyApp
         // Configure your AppHost with the necessary configuration and dependencies your App needs
         public override void Configure(Container container)
         {
+            Plugins.Add(new TemplatePagesFeature()); // enable server-side rendering, see: http://templates.servicestack.net
+
             SetConfig(new HostConfig
             {
                 AddRedirectParamsToQueryString = true,

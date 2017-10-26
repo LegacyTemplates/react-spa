@@ -2,6 +2,7 @@
 using ServiceStack;
 using MyApp.ServiceModel;
 using ServiceStack.DataAnnotations;
+using ServiceStack.Templates;
 
 namespace MyApp.ServiceInterface
 {
@@ -16,7 +17,8 @@ namespace MyApp.ServiceInterface
     {
         //Return index.html for unmatched requests so routing is handled on client
         public object Any(FallbackForClientRoutes request) => 
-            new HttpResult(VirtualFileSources.GetFile("index.html"));
+            new PageResult(Request.GetPage("/"));
+            //new HttpResult(VirtualFileSources.GetFile("index.html")); //Use instead if index.html is just static HTML
 
         public object Any(Hello request)
         {
