@@ -2,6 +2,7 @@
   
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
   </PropertyGroup>
   
   <ItemGroup>
@@ -17,8 +18,8 @@
     <ProjectReference Include="..\MyApp.ServiceInterface\MyApp.ServiceInterface.csproj" />
     <ProjectReference Include="..\MyApp.ServiceModel\MyApp.ServiceModel.csproj" />
   </ItemGroup>
-  
-  <Target Name="RunInstall" BeforeTargets="Build" Condition=" !Exists('wwwroot\dist\index.html') ">
+
+  <Target Name="OnFirstUse" BeforeTargets="Build" Condition=" !Exists('wwwroot\index.html') ">
     <Exec Command="node --version" ContinueOnError="true">
       <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
     </Exec>
@@ -27,17 +28,5 @@
     <Message Importance="high" Text="Performing first-run Webpack build..." />
     <Exec Command="npm run build" />
   </Target>
-  
-  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
-    <Exec Command="npm run build-prod" />
-  
-    <ItemGroup>
-      <DistFiles Include="wwwroot\dist\**" />
-      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
-        <RelativePath>%(DistFiles.Identity)</RelativePath>
-        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      </ResolvedFileToPublish>
-    </ItemGroup>
-  </Target>
-  
+
 </Project>
