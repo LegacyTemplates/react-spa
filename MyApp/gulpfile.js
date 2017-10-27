@@ -4,6 +4,7 @@
         '00-webpack-watch': 'npm run watch',
         'webpack-build': 'npm run build',
         'webpack-build-prod': 'npm run build-prod',
+        'webpack-build-vendor': 'npm run build-vendor',
         'tests-run': 'npm run test',
         'tests-watch': 'npm run test-watch',
         'tests-coverage': 'npm run test-coverage',
