@@ -8,7 +8,6 @@ module.exports = (env) => {
     const isDevServer = npmScript === 'dev';
 
     const packageConfig = require("./package.json"),
-          fs = require('fs'),
           path = require('path'),
           webpack = require('webpack'),
           ExtractTextPlugin = require('extract-text-webpack-plugin'),
