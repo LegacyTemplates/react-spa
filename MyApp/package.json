@@ -8,6 +8,7 @@
     "build": "webpack --config webpack.config.js",
     "build-prod": "webpack --config webpack.config.js --env.prod",
     "build-vendor": "webpack --config webpack.config.vendor.js",
+    "publish": "webpack --config webpack.config.vendor.js --env.prod && npm run build-prod && dotnet publish -c Release",
     "test": "jest",
     "test-watch": "jest --watch",
     "test-coverage": "jest --coverage",
