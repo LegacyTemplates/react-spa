@@ -123,9 +123,8 @@ module.exports = (env) => {
                 filename: '../index.html',
                 inject: true
             }),
-            new AddAssetHtmlPlugin({
-                filepath: root('wwwroot/dist/*.dll.js'),
-            }),
+            new AddAssetHtmlPlugin({ filepath: root('wwwroot/dist/*.dll.js') }),
+            new AddAssetHtmlPlugin({ filepath: root('wwwroot/dist/*.dll.css'), typeOfAsset: 'css' }),
             ...when(isProd, [
                 new ExtractTextPlugin({ filename: '[name].[chunkhash].css', allChunks: true }),
                 new webpack.optimize.UglifyJsPlugin({ sourceMap: true })

@@ -1,6 +1,8 @@
 "use strict";
 
 const VENDOR = [
+    'bootstrap/dist/css/bootstrap.css',
+    'font-awesome/css/font-awesome.css',
     'es6-shim',
     'classnames',
     'react',
@@ -15,7 +17,7 @@ const path = require('path'),
       Clean = require('clean-webpack-plugin');
       
 module.exports = (env) => {
-    const extractCSS = new ExtractTextPlugin('vendor.css');
+    const extractCSS = new ExtractTextPlugin('vendor.dll.css');
     const isDev = !(env && env.prod);
     return [{
         entry: { vendor: VENDOR },
