@@ -113,6 +113,7 @@ module.exports = (env) => {
         plugins: [
             new CheckerPlugin(),
             new webpack.DefinePlugin({ 'process.env.NODE_ENV': isDev ? '"development"' : '"production"' }),
+            new webpack.WatchIgnorePlugin([root("wwwroot")]),
             new webpack.DllReferencePlugin({
                 context: __dirname,
                 manifest: require('./wwwroot/dist/vendor-manifest.json')
