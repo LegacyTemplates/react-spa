@@ -5,6 +5,7 @@
 
 # Custom
 dist/
+coverage/
 
 # User-specific files
 *.suo
