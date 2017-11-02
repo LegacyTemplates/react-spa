@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using ServiceStack;
-using MyApp.ServiceModel;
-using ServiceStack.DataAnnotations;
 using ServiceStack.Templates;
+using ServiceStack.DataAnnotations;
+using MyApp.ServiceModel;
 
 namespace MyApp.ServiceInterface
 {
