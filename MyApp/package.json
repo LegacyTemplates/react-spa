@@ -13,7 +13,7 @@
     "test": "jest",
     "test-watch": "jest --watch",
     "test-coverage": "jest --coverage",
-    "update-dtos": "cd src && typescript-ref"
+    "dtos-update": "cd src && typescript-ref"
   },
   "jest": {
     "globals": {
