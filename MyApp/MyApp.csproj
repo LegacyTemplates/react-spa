@@ -11,7 +11,6 @@
   </ItemGroup>
   
   <ItemGroup>
-    <DotNetCliToolReference Include="Microsoft.DotNet.Xdt.Tools" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
     <PackageReference Include="ServiceStack" Version="5.*" />
   </ItemGroup>
@@ -20,21 +19,14 @@
     <ProjectReference Include="..\MyApp.ServiceInterface\MyApp.ServiceInterface.csproj" />
     <ProjectReference Include="..\MyApp.ServiceModel\MyApp.ServiceModel.csproj" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0" />
+  </ItemGroup>
 
   <Target Name="OnFirstUse" BeforeTargets="Build" Condition=" !Exists('wwwroot\dist') ">
     <Exec Command="node --version" ContinueOnError="true"><Output TaskParameter="ExitCode" PropertyName="ErrorCode" /></Exec>
     <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
-  </Target>
-
-  <Target Name="ApplyXdtConfigTransform" BeforeTargets="_TransformWebConfig">
-    <PropertyGroup>
-      <_SourceWebConfig>$(MSBuildThisFileDirectory)Web.config</_SourceWebConfig>
-      <_XdtTransform>$(MSBuildThisFileDirectory)Web.$(Configuration).config</_XdtTransform>
-      <_TargetWebConfig>$(PublishDir)Web.config</_TargetWebConfig>
-    </PropertyGroup>
-    <Exec
-        Command="dotnet transform-xdt --xml &quot;$(_SourceWebConfig)&quot; --transform &quot;$(_XdtTransform)&quot; --output &quot;$(_TargetWebConfig)&quot;"
-        Condition="Exists('$(_XdtTransform)')" />
   </Target>
   
 </Project>
