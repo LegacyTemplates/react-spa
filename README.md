@@ -6,7 +6,7 @@
 
 > Browse [source code](https://github.com/NetCoreTemplates/react-spa), view live demo [react-spa.web-templates.io](http://react-spa.web-templates.io) and install with [dotnet-new](http://docs.servicestack.net/dotnet-new):
 
-    $ npm install -g servicestack-cli
+    $ npm install -g @servicestack/cli
 
     $ dotnet-new react-spa ProjectName
 
