@@ -2,7 +2,7 @@
   
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
   </PropertyGroup>
   
