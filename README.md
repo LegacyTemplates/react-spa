@@ -1,6 +1,6 @@
 # react-spa
 
-.NET Core 2.0 React Webpack App Template
+.NET Core 2.1 React Webpack App Template
 
 [![](https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/react-spa.png)](http://react-spa.web-templates.io/)
 
