@@ -21,6 +21,8 @@
   },
   "exclude": [
     "node_modules",
+    "bin",
+    "wwwroot",
     "build",
     "scripts",
     "acceptance-tests",
