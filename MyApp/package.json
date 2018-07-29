@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "rimraf wwwroot/ && node scripts/dev.js",
-    "serve": "react-scripts-ts start",
+    "start": "react-scripts-ts start",
     "dtos": "cd src && typescript-ref",
     "build": "rimraf wwwroot/ && react-scripts-ts build && (move build wwwroot || mv build wwwroot)",
     "publish": "npm run build && dotnet publish -c Release",

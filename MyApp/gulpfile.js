@@ -1,7 +1,7 @@
 (function () {
     var SCRIPTS = {
         'dev': 'npm run dev',
-        'serve': 'npm run serve',
+        'start': 'npm run start',
         'dtos': 'npm run dtos',
         'build': 'npm run build',
         'publish': 'npm run publish',
