@@ -1,87 +1,40 @@
 {
-  "name": "MyApp",
-  "version": "0.0.1",
+  "name": "my-app",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "postinstall": "npm run build-vendor && npm run build",
-    "dev": "webpack --config webpack.config.js --watch",
-    "dev-server": "webpack-dev-server",
+    "dev": "rimraf wwwroot/ && node scripts/dev.js",
+    "serve": "react-scripts-ts start",
     "dtos": "cd src && typescript-ref",
-    "build": "webpack --config webpack.config.js",
-    "build-prod": "webpack --config webpack.config.js --env.prod",
-    "build-vendor": "webpack --config webpack.config.vendor.js",
-    "publish": "webpack --config webpack.config.vendor.js --env.prod && npm run build-prod && dotnet publish -c Release",
-    "test": "jest",
-    "test-watch": "jest --watch",
-    "test-coverage": "jest --coverage"
+    "build": "rimraf wwwroot/ && react-scripts-ts build && (move build wwwroot || mv build wwwroot)",
+    "publish": "npm run build && dotnet publish -c Release",
+    "test": "react-scripts-ts test",
+    "test-coverage": "npm test -- --coverage",
+    "eject": "react-scripts-ts eject"
   },
-  "jest": {
-    "globals": {
-      "BaseUrl": "http://localhost:5000"
-    },
-    "transform": {
-      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-    },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
-    "moduleNameMapper": {
-      "^.+\\.(css|scss|sass)$": "identity-obj-proxy",
-      "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/test.fileMock.js"
-    },
-    "setupFiles": [
-      "<rootDir>/src/test.shim.js",
-      "<rootDir>/src/test.setup.js"
-    ]
-  },
+  "proxy": "http://localhost:5000/",
   "dependencies": {
     "@servicestack/client": "^1.0.14",
-    "bootstrap": "^4.1.1",
+    "bootstrap": "^4.1.3",
     "classnames": "^2.2.6",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "es6-shim": "^0.35.3",
     "font-awesome": "^4.7.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
+    "react-scripts-ts": "2.16.0"
   },
   "devDependencies": {
-    "@servicestack/cli": "^1.0.5",
-    "@types/classnames": "^2.2.4",
-    "@types/jest": "^23.1.3",
-    "@types/node": "^10.5.1",
-    "@types/react": "^16.4.6",
+    "@types/classnames": "^2.2.6",
+    "@types/enzyme": "^3.1.12",
+    "@types/enzyme-adapter-react-16": "^1.0.2",
+    "@types/jest": "^23.3.1",
+    "@types/node": "^10.5.4",
+    "@types/react": "^16.4.7",
     "@types/react-dom": "^16.0.6",
-    "add-asset-html-webpack-plugin": "^2.1.3",
-    "autoprefixer": "^8.6.4",
-    "awesome-typescript-loader": "^4.0.1",
-    "chalk": "^2.4.1",
-    "clean-webpack-plugin": "^0.1.19",
-    "copy-webpack-plugin": "^4.5.2",
-    "css-loader": "^0.28.11",
+    "@types/react-router-dom": "^4.3.0",
     "enzyme": "^3.3.0",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "file-loader": "^1.1.11",
-    "gulp": "^3.9.1",
-    "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.1.0",
-    "identity-obj-proxy": "^3.0.0",
-    "image-webpack-loader": "^4.3.1",
-    "jest": "^23.2.0",
-    "node-sass": "^4.9.0",
-    "postcss-loader": "^2.1.5",
-    "precss": "^3.1.2",
+    "enzyme-adapter-react-16": "^1.1.1",
     "react-test-renderer": "^16.4.1",
-    "sass-loader": "^7.0.3",
-    "source-map-loader": "^0.2.3",
-    "style-loader": "^0.21.0",
-    "ts-jest": "^23.0.0",
-    "typescript": "^2.9.2",
-    "url-loader": "^1.0.1",
-    "webpack": "^3.12.0",
-    "webpack-dev-server": "^2.11.2"
+    "typescript": "^2.9.2"
   }
 }
