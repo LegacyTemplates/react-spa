@@ -1,24 +1,107 @@
 import * as React from 'react';
-import * as cls from 'classnames';
-import { Link, withRouter } from 'react-router-dom';
-import { JsonServiceClient } from '@servicestack/client';
+import { createContext, useReducer } from 'react';
+import { JsonServiceClient, GetNavItemsResponse, UserAttributes, IAuthSession } from '@servicestack/client';
+import { History } from 'history';
 
-declare var global: any; // populated from package.json/jest
+declare let global: any; // populated from package.json/jest
 
-export const client = new JsonServiceClient(global.BaseUrl || '/');
+export let client = new JsonServiceClient(global.BaseUrl || '/');
 
-class NavItemImpl extends React.Component<any,any> {
+export {
+  errorResponse, errorResponseExcept,
+  splitOnFirst, toPascalCase,
+  queryString
+} from '@servicestack/client';
 
-  public render () {
-    const { to, location, children } = this.props;
-    const active = location.pathname === to;
+export {
+  ResponseStatus, ResponseError,
+  Authenticate, AuthenticateResponse,
+  Register,
+  Hello, HelloResponse
+} from './dtos';
 
-    return (
-      <li role="presentation" className={cls('nav-item', { active })}>
-        <Link to={to} className="nav-link">{children}</Link>
-      </li>
-    )
+import {
+  Authenticate, AuthenticateResponse
+} from './dtos';
+
+export enum Routes {
+  Home = '/',
+  About = '/about',
+  SignIn = '/signin',
+  SignUp = '/signup',
+  Profile = '/profile',
+  Admin = '/admin',
+  Forbidden = '/forbidden',
+}
+
+export enum Roles {
+  Admin = 'Admin',
+}
+
+export const redirect = (history: History, path: string) => {
+  const externalUrl = path.indexOf('://') >= 0;
+  if (!externalUrl) {
+    history.push(path);
+  } else {
+    location.href = path;
   }
 }
 
-export const NavItem = withRouter(NavItemImpl);
+// Shared state between all Components
+interface State {
+  nav: GetNavItemsResponse;
+  userSession: IAuthSession | null;
+  userAttributes?: string[];
+  roles?: string[];
+  permissions?: string[];
+}
+interface Action {
+  type: 'signout' | 'signin'
+  data?: AuthenticateResponse | any
+}
+
+const initialState: State = {
+  nav: global.NAV_ITEMS as GetNavItemsResponse,
+  userSession: global.AUTH as AuthenticateResponse,
+  userAttributes: UserAttributes.fromSession(global.AUTH),
+};
+
+const reducer = (state: State, action: Action) => {
+  switch (action.type) {
+    case 'signin':
+    const userSession = action.data as IAuthSession;
+    return { ...state, userSession, roles: userSession.roles || [], permissions: userSession.permissions || [],
+                userAttributes: UserAttributes.fromSession(userSession) } as State;
+    case 'signout':
+      return { nav:state.nav, userSession:null } as State;
+    default:
+      throw new Error();
+  }
+}
+
+interface Context {
+  state: State,
+  dispatch: React.Dispatch<Action>
+}
+
+export const StateContext = createContext({} as Context);
+
+export const StateProvider = (props: any) => {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  return (<StateContext.Provider value={{ state, dispatch }}>{props.children}</StateContext.Provider>);
+}
+
+type Dispatch = React.Dispatch<Action>;
+
+export const checkAuth = async (dispatch: Dispatch) => {
+  try {
+    dispatch({ type: 'signin', data: await client.post(new Authenticate()) });
+  } catch (e) {
+    dispatch({ type: 'signout' });
+  }
+};
+
+export const signout = async (dispatch: Dispatch) => {
+  dispatch({ type: 'signout' });
+  await client.post(new Authenticate({ provider: 'logout' }));
+};

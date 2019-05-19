@@ -7,6 +7,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using ServiceStack;
 
 namespace MyApp
 {
@@ -14,12 +15,13 @@ namespace MyApp
     {
         public static void Main(string[] args)
         {
+            ModularStartup.Init(typeof(Startup), typeof(MyApp.ServiceInterface.MyServices).Assembly);
             BuildWebHost(args).Run();
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
+                .UseStartup<ModularStartup>()
                 .Build();
     }
 }

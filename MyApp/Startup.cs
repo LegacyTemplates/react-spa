@@ -8,6 +8,11 @@ using Funq;
 using ServiceStack;
 using ServiceStack.Configuration;
 using MyApp.ServiceInterface;
+using ServiceStack.Script;
+using ServiceStack.Web;
+using System;
+using ServiceStack.Text;
+using ServiceStack.Logging;
 
 namespace MyApp
 {
