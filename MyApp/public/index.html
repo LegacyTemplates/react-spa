@@ -27,8 +27,8 @@
     {{ 'svg-icons'        | cssIncludes | svgFill('#008299') }}
 
     <i hidden>{{ '/js/hot-fileloader.js' | ifDebugIncludeScript }}</i>
-    <script>NAV_ITEMS = {{ 'GetNavItems' | sendToGateway | json }}</script>
-    <script>AUTH = {{ 'Authenticate' | sendToGateway | json }}</script>
+    <script>NAV_ITEMS = {{ 'GetNavItems' | execService | json }}</script>
+    <script>AUTH = {{ 'Authenticate' | execService({ ifErrorReturn: "null" }) | json }}</script>
 
     <noscript>
       You need to enable JavaScript to run this app.
