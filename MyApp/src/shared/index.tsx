@@ -5,6 +5,10 @@ import { History } from 'history';
 
 declare let global: any; // populated from package.json/jest
 
+if (typeof global === 'undefined') {
+  (window as any).global = window;
+}
+
 export let client = new JsonServiceClient(global.BaseUrl || '/');
 
 export {

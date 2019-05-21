@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
 
-import Hello from './Hello';
+import { HelloApi } from './HelloApi';
 import { Input } from '@servicestack/react';
 
 const hold = console.error;
@@ -19,7 +19,7 @@ describe('<Hello />', () => {
 
   it ('Updates heading on input change', done => {
 
-    const el = mount(<Hello />);
+    const el = mount(<HelloApi />);
 
     expect(el.find('h3').text()).toBe('');
     (el.find(Input).prop('onChange') as any)('A');

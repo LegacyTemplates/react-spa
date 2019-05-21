@@ -95,5 +95,3 @@ export const SignUp = withRouter<any>(({ history }) => {
         </div>
     </div>);
 });
-
-export default SignUp;

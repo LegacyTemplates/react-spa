@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StateContext, signout } from '../shared';
 import { LinkButton } from '@servicestack/react';
 
-const Profile: React.FC<any> = () => {
+export const Profile: React.FC<any> = () => {
 
     const { state, dispatch } = React.useContext(StateContext);
     const user = state.userSession!;
@@ -34,4 +34,3 @@ const Profile: React.FC<any> = () => {
         </div>
     );
 }
-export default Profile;

@@ -85,12 +85,9 @@ export const SignIn = withRouter<any>(({ history }) => {
         <div className="col-5">
             <div className="row justify-content-end mt-5">
                 <div className="col col-8">
-                    <NavButtonGroup items={state.nav.navItemsMap.auth} attributes={state.userAttributes}
-                                    baseHref={(state.nav as any).baseUrl} block lg />
+                    <NavButtonGroup items={state.nav.navItemsMap.auth} attributes={state.userAttributes} baseHref={state.nav.baseUrl} block lg />
                 </div>
             </div>
         </div>
     </div>);
 });
-
-export default SignIn;

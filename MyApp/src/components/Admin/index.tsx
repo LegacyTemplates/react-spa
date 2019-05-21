@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StateContext } from '../../shared';
 
-const Admin: React.FC<any> = () => {
+export const Admin: React.FC<any> = () => {
 
     const { state, dispatch } = React.useContext(StateContext);
     const user = state.userSession!;
@@ -20,4 +20,3 @@ const Admin: React.FC<any> = () => {
         </div>
     );
 }
-export default Admin;

@@ -1,16 +1,16 @@
 ﻿import * as React from 'react';
 import { StateContext, signout } from '../../shared';
 import { LinkButton } from '@servicestack/react';
-import Hello from './Hello';
+import { HelloApi } from './HelloApi';
 
-const Home: React.FC<any> = (props:any) => {
+export const Home: React.FC<any> = (props:any) => {
     const {state, dispatch} = React.useContext(StateContext);
 
     const handleSignOut = async () => await signout(dispatch);
 
     return (<div className="row justify-content-between">
         <div className="col col-4">
-            <Hello name={props.name} />
+            <HelloApi name={props.name} />
         </div>
         <div className="col col-4">
             {state.userSession ?
@@ -26,4 +26,3 @@ const Home: React.FC<any> = (props:any) => {
         </div>
     </div>);
 }
-export default Home;

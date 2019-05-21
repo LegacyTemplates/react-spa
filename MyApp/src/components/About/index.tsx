@@ -1,5 +1,3 @@
-import './about.css';
-
 import * as React from 'react';
 
 export const About: React.FC<any> = (props:any) => (
@@ -8,5 +6,3 @@ export const About: React.FC<any> = (props:any) => (
         <h3>{props.message}</h3>
     </div>
 );
-
-export default () => <About message="About page" />;
