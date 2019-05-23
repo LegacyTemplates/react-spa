@@ -1,8 +1,8 @@
 /* Options:
-Date: 2019-05-13 04:53:51
+Date: 2019-05-23 02:24:11
 Version: 5.51
 Tip: To override a DTO option, remove "//" prefix before updating
-BaseUrl: http://localhost:5000
+BaseUrl: https://localhost:5001
 
 //GlobalNamespace: 
 //AddServiceStackTypes: True
@@ -110,9 +110,18 @@ export class AuthenticateResponse implements IHasSessionId, IHasBearerToken
     public refreshToken: string;
 
     // @DataMember(Order=8)
-    public responseStatus: ResponseStatus;
+    public profileUrl: string;
 
     // @DataMember(Order=9)
+    public roles: string[];
+
+    // @DataMember(Order=10)
+    public permissions: string[];
+
+    // @DataMember(Order=11)
+    public responseStatus: ResponseStatus;
+
+    // @DataMember(Order=12)
     public meta: { [index:string]: string; };
 
     public constructor(init?:Partial<AuthenticateResponse>) { (Object as any).assign(this, init); }
