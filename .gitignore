@@ -5,6 +5,7 @@
 
 # Custom
 dist/
+wwwroot/
 coverage/
 
 # User-specific files
