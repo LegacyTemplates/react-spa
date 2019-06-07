@@ -8,6 +8,12 @@ import { StateContext, client, Authenticate, Routes, queryString, redirect } fro
 export const SignIn = withRouter<any>(({ history }) => {
     const {state, dispatch} = useContext(StateContext);
 
+    const redirectTo = queryString(history.location.search).redirect || Routes.Home;
+    if (state.userSession != null) {
+        redirect(history, redirectTo);
+        return null;
+    }
+
     const [loading, setLoading] = useState(false);
     const [responseStatus, setResponseStatus] = useState(null);
 
@@ -34,7 +40,7 @@ export const SignIn = withRouter<any>(({ history }) => {
 
             dispatch({ type:'signin', data:response });
             setLoading(false);
-            redirect(history, queryString(history.location.search).redirect || Routes.Home);
+            redirect(history, redirectTo);
 
         } catch (e) {
             setResponseStatus(e.responseStatus || e);
