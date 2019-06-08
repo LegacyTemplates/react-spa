@@ -40,7 +40,7 @@ export const App: React.FC<any> = () => {
             <nav className="navbar navbar-expand-lg navbar-dark">
                 <div className="container">
                     <Link to="/" className="navbar-brand">
-                        <i className="svg-servicestack svg-lg mr-1" />
+                        <i className="svg-logo svg-lg mr-1" />
                         <span className="align-middle">MyApp</span>
                     </Link>
                     <Navbar items={state.nav.results} attributes={state.userAttributes} />

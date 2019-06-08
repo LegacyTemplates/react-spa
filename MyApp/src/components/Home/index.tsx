@@ -9,9 +9,13 @@ export const Home: React.FC<any> = (props:any) => {
     const handleSignOut = async () => await signout(dispatch);
 
     return (<div className="row justify-content-between">
-        <div className="col col-4">
+        <div className="col col-1">
+            <i className="svg-home svg-9x"></i>
+        </div>
+        <div className="col col-4 mt-4">
             <HelloApi name={props.name} />
         </div>
+        <div className="col-md-auto"></div>
         <div className="col col-4">
             {state.userSession ?
             (<div className="text-right">
