@@ -29,6 +29,7 @@
     "webpack",
     "jest",
     "coverage",
+    "gulpfile.js",
     "src/setupTests.ts"
   ]
 }

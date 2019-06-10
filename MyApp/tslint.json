@@ -22,7 +22,6 @@
     "jsx-boolean-value": false,
     "no-empty-interface": false,
     "variable-name": [true, "allow-pascal-case", "allow-snake-case"],
-    "allow-snake-case": true,
     "no-console": false
   }
 }

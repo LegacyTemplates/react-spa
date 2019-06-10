@@ -10,12 +10,12 @@ export const Home: React.FC<any> = (props:any) => {
 
     return (<div className="row justify-content-between">
         <div className="col col-1">
-            <i className="svg-home svg-9x"></i>
+            <i className="svg-home svg-9x" />
         </div>
         <div className="col col-4 mt-4">
             <HelloApi name={props.name} />
         </div>
-        <div className="col-md-auto"></div>
+        <div className="col-md-auto" />
         <div className="col col-4">
             {state.userSession ?
             (<div className="text-right">
