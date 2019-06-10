@@ -3,8 +3,8 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
 import { BrowserRouter as Router, Route, Link, Switch, Redirect } from 'react-router-dom';
-import { Routes, Roles, StateContext, StateProvider } from './shared';
-import { Navbar, Fallback as Fallback, Forbidden } from '@servicestack/react';
+import { Routes, Roles, StateContext } from './shared';
+import { Navbar, Fallback, Forbidden } from '@servicestack/react';
 
 import { Home } from './components/Home';
 import { About } from './components/About';

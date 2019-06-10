@@ -1,9 +1,8 @@
 import * as React from 'react';
-import * as classNames from 'classnames';
 import { useState, useContext } from 'react';
 import { ErrorSummary, Input, CheckBox, Button, LinkButton, NavButtonGroup } from '@servicestack/react';
 import { withRouter } from 'react-router-dom';
-import { StateContext, client, Authenticate, Routes, queryString, redirect } from '../shared';
+import { StateContext, client, Authenticate, Routes, queryString, redirect, classNames } from '../shared';
 
 export const SignIn = withRouter<any>(({ history }) => {
     const {state, dispatch} = useContext(StateContext);
@@ -38,8 +37,8 @@ export const SignIn = withRouter<any>(({ history }) => {
                 rememberMe,
             }));
 
-            dispatch({ type:'signin', data:response });
             setLoading(false);
+            dispatch({ type:'signin', data:response });
             redirect(history, redirectTo);
 
         } catch (e) {

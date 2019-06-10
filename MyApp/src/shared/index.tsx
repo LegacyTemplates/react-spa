@@ -14,7 +14,8 @@ export let client = new JsonServiceClient(global.BaseUrl || '/');
 export {
   errorResponse, errorResponseExcept,
   splitOnFirst, toPascalCase,
-  queryString
+  queryString,
+  classNames,
 } from '@servicestack/client';
 
 export {
@@ -43,12 +44,14 @@ export enum Roles {
 }
 
 export const redirect = (history: History, path: string) => {
-  const externalUrl = path.indexOf('://') >= 0;
-  if (!externalUrl) {
-    history.push(path);
-  } else {
-    location.href = path;
-  }
+  setTimeout(() => {
+    const externalUrl = path.indexOf('://') >= 0;
+    if (!externalUrl) {
+      history.push(path);
+    } else {
+      location.href = path;
+    }
+  }, 0);
 }
 
 // Shared state between all Components
