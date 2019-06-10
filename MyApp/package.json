@@ -13,7 +13,7 @@
     "test-coverage": "npm test -- --coverage",
     "eject": "react-scripts-ts eject"
   },
-  "proxy": "http://localhost:5000/",
+  "proxy": "https://localhost:5001/",
   "dependencies": {
     "@servicestack/client": "^1.0.22",
     "@servicestack/react": "^1.0.3",
