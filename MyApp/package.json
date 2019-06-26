@@ -16,7 +16,7 @@
   "proxy": "https://localhost:5001/",
   "dependencies": {
     "@servicestack/client": "^1.0.27",
-    "@servicestack/react": "^1.0.3",
+    "@servicestack/react": "^1.0.4",
     "bootstrap": "^4.3.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
