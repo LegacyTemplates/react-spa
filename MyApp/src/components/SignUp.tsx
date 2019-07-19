@@ -4,7 +4,7 @@ import { StateContext, client, checkAuth, Register, Routes, toPascalCase, splitO
 import { ErrorSummary, Input, CheckBox, Button, LinkButton } from '@servicestack/react';
 import { withRouter } from 'react-router-dom';
 
-export const SignUp = withRouter<any>(({ history }) => {
+export const SignUp = withRouter(({ history }) => {
     const {state, dispatch} = useContext(StateContext);
 
     const [loading, setLoading] = useState(false);

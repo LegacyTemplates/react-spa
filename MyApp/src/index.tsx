@@ -6,10 +6,14 @@ import * as ReactDOM from 'react-dom';
 import { StateProvider } from './shared';
 
 import { App } from './App';
-import registerServiceWorker from './registerServiceWorker';
+import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <StateProvider><App /></StateProvider>,
   document.getElementById('root') as HTMLElement
 );
-registerServiceWorker();
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();

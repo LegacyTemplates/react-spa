@@ -4,7 +4,7 @@ import { ErrorSummary, Input, CheckBox, Button, LinkButton, NavButtonGroup } fro
 import { withRouter } from 'react-router-dom';
 import { StateContext, client, Authenticate, Routes, queryString, redirect, classNames } from '../shared';
 
-export const SignIn = withRouter<any>(({ history }) => {
+export const SignIn = withRouter(({ history }) => {
     const {state, dispatch} = useContext(StateContext);
 
     const redirectTo = queryString(history.location.search).redirect || Routes.Home;
