@@ -20,16 +20,6 @@ This initially generates a full development build of your Web App then stays run
 
 Each change updates the output dev resources so even if you stop the dev task your Web App remains in a working state that’s viewable when running the ASP.NET Web App.
 
-### Live reload with built-in Dev Server
-
-The alternative dev workflow is to run the `start` npm or gulp script to run Create React App's built-in Webpack dev server:
-
-    $ npm run start
-
-This launches the Webpack dev server listening at `http://localhost:3000/` and configured to proxy all non-Webpack HTTP requests to the ASP.NET Web App where it handles all Server API requests. The benefit of viewing your App through the Webpack dev server is its built-in Live Reload feature where it will automatically reload the page as resources are updated. We’ve found the Webpack dev server ideal when developing UI’s where your Web App is running side-by-side VS.NET, where every change saved triggers the dev server to reload the current page so changes are visible immediately.
-
-The disadvantage of the dev server is that all transformations are kept in memory so when the dev server is stopped, the Web Apps resources are lost, so it requires a webpack-build in order to generate a current build. There’s also a lag in API requests resulting from all server request being proxied.
-
 ### Watched .NET Core builds
 
 .NET Core projects can also benefit from Live Coding using dotnet watch which performs a “watched build” where it automatically stops, recompiles and restarts your .NET Core App when it detects source file changes. You can start a watched build from the command-line with:
