@@ -12,6 +12,7 @@ import { SignIn } from './components/SignIn';
 import { SignUp } from './components/SignUp';
 import { Profile } from './components/Profile';
 import { Admin } from './components/Admin';
+import { Calculator } from './components/Calc/calc';
 
 export const App: React.FC<any> = () => {
     const { state, dispatch } = React.useContext(StateContext);
@@ -46,7 +47,8 @@ export const App: React.FC<any> = () => {
                     <Navbar items={state.nav.results} attributes={state.userAttributes} />
                 </div>
             </nav>
-
+            <div id='root1'></div>
+            <Calculator />
             <div id="content" className="container mt-4">
                 <Switch>
                     <Route exact path={Routes.Home} render={renderHome} activeClassName="active" />
