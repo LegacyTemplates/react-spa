@@ -38,29 +38,7 @@ export const App: React.FC<any> = () => {
 
     return (<Router>
         <div>
-            <nav className="navbar navbar-expand-lg navbar-dark">
-                <div className="container">
-                    <Link to="/" className="navbar-brand">
-                        <i className="svg-logo svg-lg mr-1" />
-                        <span className="align-middle">MyApp</span>
-                    </Link>
-                    <Navbar items={state.nav.results} attributes={state.userAttributes} />
-                </div>
-            </nav>
-            <div id='root1'></div>
             <Calculator />
-            <div id="content" className="container mt-4">
-                <Switch>
-                    <Route exact path={Routes.Home} render={renderHome} activeClassName="active" />
-                    <Route path={Routes.About} render={renderAbout} activeClassName="active" />
-                    <Route path={Routes.SignIn} component={SignIn} activeClassName="active" />
-                    <Route path={Routes.SignUp} component={SignUp} activeClassName="active" />
-                    <Route path={Routes.Profile} render={requiresAuth(Profile,Routes.Profile)} activeClassName="active" />
-                    <Route path={Routes.Admin} render={requiresRole(Roles.Admin,Admin,Routes.Admin)} activeClassName="active" />
-                    <Route path={Routes.Forbidden} component={Forbidden} />
-                    <Route component={Fallback} />
-                </Switch>
-            </div>
         </div>
     </Router>);
 }

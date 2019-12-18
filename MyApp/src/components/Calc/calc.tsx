@@ -144,5 +144,3 @@ export class Calculator extends React.Component<Props, State> {
         );
     }
 }
-
-//ReactDOM.render(<Calculator />, document.getElementById('root1'));
