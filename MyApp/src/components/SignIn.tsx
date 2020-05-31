@@ -2,7 +2,8 @@ import * as React from 'react';
 import { useState, useContext } from 'react';
 import { ErrorSummary, Input, CheckBox, Button, LinkButton, NavButtonGroup } from '@servicestack/react';
 import { withRouter } from 'react-router-dom';
-import { StateContext, client, Authenticate, Routes, queryString, redirect, classNames } from '../shared';
+import { StateContext, client, Routes, queryString, redirect, classNames } from '../shared';
+import { Authenticate } from '../shared/dtos';
 
 export const SignIn = withRouter(({ history }) => {
     const {state, dispatch} = useContext(StateContext);

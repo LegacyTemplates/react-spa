@@ -2,7 +2,8 @@
 
 import * as React from 'react';
 import { Input } from '@servicestack/react';
-import { client, Hello } from '../../shared';
+import { client } from '../../shared';
+import { Hello } from '../../shared/dtos';
 
 export interface HelloApiProps {
     name: string;

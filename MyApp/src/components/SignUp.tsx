@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useState, useContext } from 'react';
-import { StateContext, client, checkAuth, Register, Routes, toPascalCase, splitOnFirst, classNames } from '../shared';
+import { StateContext, client, checkAuth, Routes, toPascalCase, splitOnFirst, classNames } from '../shared';
+import { Register } from '../shared/dtos';
 import { ErrorSummary, Input, CheckBox, Button, LinkButton } from '@servicestack/react';
 import { withRouter } from 'react-router-dom';
 

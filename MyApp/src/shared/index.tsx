@@ -18,13 +18,6 @@ export {
   classNames,
 } from '@servicestack/client';
 
-export {
-  ResponseStatus, ResponseError,
-  Authenticate, AuthenticateResponse,
-  Register,
-  Hello, HelloResponse
-} from './dtos';
-
 import {
   Authenticate, AuthenticateResponse
 } from './dtos';
