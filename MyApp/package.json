@@ -6,7 +6,7 @@
     "postinstall": "npm run build",
     "dev": "rimraf wwwroot/ && node scripts/dev.js",
     "start": "react-scripts-ts start",
-    "dtos": "typescript-ref",
+    "dtos": "x typescript",
     "build": "rimraf wwwroot/ && react-scripts-ts build && (move build wwwroot || mv build wwwroot)",
     "publish": "npm run build && dotnet publish -c Release",
     "test": "react-scripts-ts test --env=jsdom --watchAll",
