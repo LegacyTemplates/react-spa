@@ -8,6 +8,9 @@ body {
     border-radius: 0;
     background: #008299!important;
 }
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
 a {
     color: #0097b3;
 }

@@ -16,27 +16,27 @@
   "proxy": "https://localhost:5001/",
   "dependencies": {
     "@servicestack/client": "^1.0.32",
-    "@servicestack/react": "^1.0.5",
-    "bootstrap": "^4.5.0",
+    "@servicestack/react": "^1.0.6",
+    "bootstrap": "^4.5.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts-ts": "^3.1.0"
   },
   "devDependencies": {
-    "@types/enzyme": "^3.10.5",
+    "@types/enzyme": "^3.10.6",
     "@types/enzyme-adapter-react-16": "^1.0.6",
-    "@types/jest": "^26.0.0",
-    "@types/node": "^14.0.13",
-    "@types/react": "^16.9.36",
+    "@types/jest": "^26.0.13",
+    "@types/node": "^14.10.1",
+    "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.5",
-    "@types/react-test-renderer": "^16.9.2",
+    "@types/react-test-renderer": "^16.9.3",
     "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-adapter-react-16": "^1.15.4",
     "gulp": "^4.0.2",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "react-test-renderer": "^16.13.1",
-    "typescript": "^3.9.5"
+    "typescript": "^3.9.7"
   }
 }
