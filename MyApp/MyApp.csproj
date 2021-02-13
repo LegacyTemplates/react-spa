@@ -9,6 +9,11 @@
   <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
+   
+  <Target Name="Bundle" BeforeTargets="BeforePublish">
+    <Exec Command="npm install --also=dev" />
+    <Exec Command="npm run-script build" />
+  </Target>
 
   <ItemGroup>
     <PackageReference Include="ServiceStack" Version="5.*" />
