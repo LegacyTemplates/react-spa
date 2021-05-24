@@ -74,7 +74,7 @@ export const SignIn = withRouter(({ history }) => {
                     </CheckBox>
                 </div>
                 <div className="mb-3">
-                    <Button type="submit" lg primary>Sign In</Button>
+                    <Button type="submit" lg primary>Login</Button>
                     <LinkButton href="/signup" lg outline-secondary className="ms-2">Register New User</LinkButton>
                 </div>
             </form>
