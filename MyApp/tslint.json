@@ -2,7 +2,6 @@
   "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
   "linterOptions": {
     "exclude": [
-      "gulpfile.js",
       "bin/**",
       "wwwroot/**",
       "config/**/*.js",

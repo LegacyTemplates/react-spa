@@ -2,18 +2,19 @@
 process.env.NODE_ENV = 'development';
 
 const fs = require('fs-extra');
-const paths = require('react-scripts-ts/config/paths');
+const paths = require('react-scripts/config/paths');
 
 const path = require('path');
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 
 const webpack = require('webpack');
-const config = require('react-scripts-ts/config/webpack.config.dev.js');
+const config = require('react-scripts/config/webpack.config.js')('development');
+console.log(config)
 
 // remove react-dev-utils/webpackHotDevClient.js
-config.entry.splice(config.entry.findIndex(
-    e => e.indexOf('webpackHotDevClient.js') >= 0), 1);
+// config.entry.splice(config.entry.findIndex(
+//     e => e.indexOf('webpackHotDevClient.js') >= 0), 1);
 
 config.output.path =  resolveApp('wwwroot');
 

@@ -3,7 +3,7 @@ import { StateContext } from '../../shared';
 
 export const Admin: React.FC<any> = () => {
 
-    const { state, dispatch } = React.useContext(StateContext);
+    const { state } = React.useContext(StateContext);
     const user = state.userSession!;
     const roles = user && user.roles;
 

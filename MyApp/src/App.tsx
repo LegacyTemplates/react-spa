@@ -1,6 +1,5 @@
-﻿import 'es6-shim';
+import 'es6-shim';
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 
 import { BrowserRouter as Router, Route, Link, Switch, Redirect } from 'react-router-dom';
 import { Routes, Roles, StateContext } from './shared';
@@ -14,7 +13,7 @@ import { Profile } from './components/Profile';
 import { Admin } from './components/Admin';
 
 export const App: React.FC<any> = () => {
-    const { state, dispatch } = React.useContext(StateContext);
+    const { state } = React.useContext(StateContext);
 
     const renderHome = () => <Home name="React" />;
     const renderAbout = () => <About message="About page" />;
@@ -49,12 +48,12 @@ export const App: React.FC<any> = () => {
 
             <div id="content" className="container mt-4">
                 <Switch>
-                    <Route exact path={Routes.Home} render={renderHome} activeClassName="active" />
-                    <Route path={Routes.About} render={renderAbout} activeClassName="active" />
-                    <Route path={Routes.SignIn} component={SignIn} activeClassName="active" />
-                    <Route path={Routes.SignUp} component={SignUp} activeClassName="active" />
-                    <Route path={Routes.Profile} render={requiresAuth(Profile,Routes.Profile)} activeClassName="active" />
-                    <Route path={Routes.Admin} render={requiresRole(Roles.Admin,Admin,Routes.Admin)} activeClassName="active" />
+                    <Route exact path={Routes.Home} render={renderHome} />
+                    <Route path={Routes.About} render={renderAbout} />
+                    <Route path={Routes.SignIn} component={SignIn} />
+                    <Route path={Routes.SignUp} component={SignUp} />
+                    <Route path={Routes.Profile} render={requiresAuth(Profile,Routes.Profile)} />
+                    <Route path={Routes.Admin} render={requiresRole(Roles.Admin,Admin,Routes.Admin)} />
                     <Route path={Routes.Forbidden} component={Forbidden} />
                     <Route component={Fallback} />
                 </Switch>

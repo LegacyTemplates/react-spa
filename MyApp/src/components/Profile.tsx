@@ -14,7 +14,7 @@ export const Profile: React.FC<any> = () => {
     return (
         <div id="profile" className="text-center">
 
-            <img src={user.profileUrl} className="svg-8x" />
+            <img src={user.profileUrl} className="svg-8x" alt="Profile" />
 
             <p className="my-2">
                 {user.displayName} {user.userId ? <span>#{user.userId}</span> : null}

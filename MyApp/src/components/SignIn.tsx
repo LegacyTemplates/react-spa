@@ -57,25 +57,25 @@ export const SignIn = withRouter(({ history }) => {
             <h3>Sign In</h3>
 
             <form className={classNames({error:responseStatus, loading})} onSubmit={handleSubmit}>
-                <div className="form-group">
+                <div className="mb-3">
                     <ErrorSummary except={'userName,password'} responseStatus={responseStatus} />
                 </div>
-                <div className="form-group">
+                <div className="mb-3">
                     <Input type="text" id="userName" value={userName} onChange={setUserName} responseStatus={responseStatus} placeholder="UserName"
                         label="Email"  help="Email you signed up with" />
                 </div>
-                <div className="form-group">
+                <div className="mb-3">
                     <Input type="password" id="password" value={password} onChange={setPassword} responseStatus={responseStatus} placeholder="Password"
                         label="Password"  help="6 characters or more" />
                 </div>
-                <div className="form-group">
+                <div className="mb-3">
                     <CheckBox id="rememberMe" value={rememberMe} onChange={setRememberMe} responseStatus={responseStatus}>
                         Remember Me
                     </CheckBox>
                 </div>
-                <div className="form-group">
+                <div className="mb-3">
                     <Button type="submit" lg primary>Sign In</Button>
-                    <LinkButton href="/signup" lg outline-secondary className="ml-2">Register New User</LinkButton>
+                    <LinkButton href="/signup" lg outline-secondary className="ms-2">Register New User</LinkButton>
                 </div>
             </form>
 
@@ -87,12 +87,11 @@ export const SignIn = withRouter(({ history }) => {
                 </div>
             </div>
         </div>
-
+        <div className="col-3"></div>
         <div className="col-5">
-            <div className="row justify-content-end mt-5">
-                <div className="col col-8">
-                    <NavButtonGroup items={state.nav.navItemsMap.auth} attributes={state.userAttributes} baseHref={state.nav.baseUrl} block lg />
-                </div>
+            <div className="row justify-content-end mt-5" style={{maxWidth:300}}>
+                <NavButtonGroup navClass="nav-button-group" 
+                    items={state.nav.navItemsMap.auth} attributes={state.userAttributes} baseHref={state.nav.baseUrl} lg />
             </div>
         </div>
     </div>);

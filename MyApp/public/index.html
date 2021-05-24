@@ -24,12 +24,12 @@
 <body>
 
   <i hidden>
-  {{ 'buttons,svg-auth,app' | cssIncludes }}
-  {{ 'svg-icons'            | cssIncludes | svgFill('#008299') }}
+  {{ 'buttons,svg-auth,app' |> cssIncludes }}
+  {{ 'svg-icons'            |> cssIncludes |> svgFill('#008299') }}
   {{#script}}
-    {{ '/js/hot-fileloader.js'    | onlyIfDebug | includeFile }}
-    NAV_ITEMS = {{ 'GetNavItems'  | execService | json }};
-    AUTH      = {{ 'Authenticate' | execService({ ifErrorReturn: "null" }) | json }};
+    {{ '/js/hot-fileloader.js'    |> onlyIfDebug |> includeFile }}
+    NAV_ITEMS = {{ 'GetNavItems'  |> execService |> json }};
+    AUTH      = {{ 'Authenticate' |> execService({ ifErrorReturn: "null" }) |> json }};
   {{/script}}
   </i>
 

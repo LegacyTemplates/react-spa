@@ -1,4 +1,4 @@
-﻿import './hello.css';
+import './hello.css';
 
 import * as React from 'react';
 import { Input } from '@servicestack/react';
@@ -20,8 +20,8 @@ export const HelloApi: React.FC<any> = (props:HelloApiProps) => {
     }, [name]); // fires when name changes
 
     return (<div>
-        <div className="form-group">
-            <Input value={name} onChange={setName} placeholder="Your name" />
+        <div className="form-group" role="form">
+            <Input id="txtName" value={name} onChange={setName} placeholder="Your name" />
             <h3 className="result pt-2">{ result }</h3>
         </div>
     </div>);

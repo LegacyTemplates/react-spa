@@ -14,3 +14,13 @@ body {
 a {
     color: #0097b3;
 }
+.nav-button-group {
+    display: flex;
+    flex-direction: column;
+}
+.btn-block a {
+    display: block;
+}
+.nav-button-group .btn {
+    margin-bottom: .25rem;
+}

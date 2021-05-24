@@ -1,4 +1,4 @@
-﻿import * as React from 'react';
+import * as React from 'react';
 import { StateContext, signout } from '../../shared';
 import { LinkButton } from '@servicestack/react';
 import { HelloApi } from './HelloApi';
@@ -25,7 +25,7 @@ export const Home: React.FC<any> = (props:any) => {
             (<div className="text-right">
                 <p className="pt-3">You are not authenticated.</p>
                 <LinkButton href="/signin" sm primary>Sign In</LinkButton>
-                <LinkButton href="/signup" sm outline-secondary className="ml-2">Register New User</LinkButton>
+                <LinkButton href="/signup" sm outline-secondary className="ms-2">Register New User</LinkButton>
             </div>)}
         </div>
     </div>);
