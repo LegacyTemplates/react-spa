@@ -10,7 +10,7 @@
       "hasInstallScript": true,
       "dependencies": {
         "@servicestack/client": "^1.0.54",
-        "@servicestack/react": "^1.0.6",
+        "@servicestack/react": "^1.0.8",
         "@testing-library/jest-dom": "^5.12.0",
         "@testing-library/react": "^11.2.7",
         "@testing-library/user-event": "^12.8.3",
@@ -2234,9 +2234,9 @@
       }
     },
     "node_modules/@servicestack/react": {
-      "version": "1.0.6",
-      "resolved": "https://registry.npmjs.org/@servicestack/react/-/react-1.0.6.tgz",
-      "integrity": "sha512-OeaHHYztr35dZvkgBoApLX6aS6K0PSw56mGdpqnVR9xWeNSVjPDKPC090//IqZqUMqaLv9jg/HjB0IkB7ORjVw==",
+      "version": "1.0.8",
+      "resolved": "https://registry.npmjs.org/@servicestack/react/-/react-1.0.8.tgz",
+      "integrity": "sha512-Ua3/S/6ZIRIIH6j4SjBu5Rsmvbcq6AdLypx3TrfiwWPDuwvWt/Q/ePWvW8KYiyVeQyxr0qz9gaglpjOnvWLH+g==",
       "dependencies": {
         "@servicestack/client": "^1.0.31",
         "react": "^16.8.6",
@@ -22024,9 +22024,9 @@
       }
     },
     "@servicestack/react": {
-      "version": "1.0.6",
-      "resolved": "https://registry.npmjs.org/@servicestack/react/-/react-1.0.6.tgz",
-      "integrity": "sha512-OeaHHYztr35dZvkgBoApLX6aS6K0PSw56mGdpqnVR9xWeNSVjPDKPC090//IqZqUMqaLv9jg/HjB0IkB7ORjVw==",
+      "version": "1.0.8",
+      "resolved": "https://registry.npmjs.org/@servicestack/react/-/react-1.0.8.tgz",
+      "integrity": "sha512-Ua3/S/6ZIRIIH6j4SjBu5Rsmvbcq6AdLypx3TrfiwWPDuwvWt/Q/ePWvW8KYiyVeQyxr0qz9gaglpjOnvWLH+g==",
       "requires": {
         "@servicestack/client": "^1.0.31",
         "react": "^16.8.6",
