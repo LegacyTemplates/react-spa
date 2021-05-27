@@ -14,7 +14,9 @@ if (typeof global === 'undefined') {
 
 export let client = new JsonServiceClient('/');
 
-const isNode = typeof process === 'object';
+const isNode = typeof process === 'object' &&
+  typeof process.versions === 'object' &&
+  typeof process.versions.node !== 'undefined';
 if (isNode) {
   const packageConfig = require("../../package.json");
   let baseUrl = packageConfig["proxy"];
