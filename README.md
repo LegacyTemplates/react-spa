@@ -1,6 +1,6 @@
 # react-spa
 
-.NET 5.0 React Webpack App Template
+.NET 6.0 React Webpack App Template
 
 [![](https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/react-spa.png)](http://react-spa.web-templates.io/)
 
