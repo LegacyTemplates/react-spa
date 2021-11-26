@@ -42,7 +42,7 @@ export const SignIn = withRouter(({ history }) => {
             dispatch({ type:'signin', data:response });
             redirect(history, redirectTo);
 
-        } catch (e) {
+        } catch (e: any) {
             setResponseStatus(e.responseStatus || e);
             setLoading(false);
         }
